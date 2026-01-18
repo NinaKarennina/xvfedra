@@ -19,24 +19,22 @@ export function initGuestModal({
     style.id = 'guest-modal-styles';
     style.textContent = `
 :root{
-  /* Base morada */
-  --paper:#fbf7ff;            /* fondo crema-lila dentro del modal */
-  --ink:#3a2a4e;              /* texto (ciruela oscura) */
-  --purple:#7a55d6;           /* acento principal */
-  --purple-soft:#d9cff6;      /* bordes neutros en inputs */
-  --ring: rgba(122,85,214,.28);/* halo de foco morado */
-  --overlay: rgba(58,37,104,.35);/* overlay morado translúcido */
+  /* Paleta contador (azul + blanco) */
+  --paper:#ffffff;                 /* fondo del modal */
+  --ink:#0B46A6;                   /* texto principal azul */
+  --overlay: rgba(11,70,166,.30);  /* overlay azul translúcido */
 
-  /* Marco del modal (degradado morado) */
-  --frame1:#cbb8ff;
-  --frame2:#efe9ff;
-  --frame3:#a487e8;
+  /* Marco del modal (degradado azul como el arte) */
+  --frame1:#0B46A6;
+  --frame2:#ffffff;
+  --frame3:#0B46A6;
 
-  /* Oro del botón: ¡lo dejamos igual! */
-  --gold1:#caa86a;
-  --gold2:#e9d396;
-  --gold3:#b58b3a;
+  /* Botón: cambia de dorado a azul del contador */
+  --gold1:#0B46A6;
+  --gold2:#2a66c9; /* azul un poco más claro */
+  --gold3:#083a88; /* azul un poco más oscuro */
 }
+
 
 #guest-modal-overlay{
   position:fixed; inset:0; display:none; align-items:center; justify-content:center;
@@ -102,10 +100,10 @@ export function initGuestModal({
 
 .btn-gold{
   appearance:none; cursor:pointer; border-radius:999px; border:2px solid transparent;
-  padding:10px 16px; color:#2b1d12; font-weight:700; letter-spacing:.2px;
+  padding:10px 16px; color:#fff; font-weight:700; letter-spacing:.2px;
   background:
-    linear-gradient(#fff2cc, #ffeeb3) padding-box,
-    linear-gradient(135deg, var(--gold1), var(--gold2) 50%, var(--gold3)) border-box;
+  linear-gradient(#0B46A6, #0B46A6) padding-box,
+  linear-gradient(135deg, var(--gold1), var(--gold2) 50%, var(--gold3)) border-box;
   box-shadow:0 2px 0 rgba(0,0,0,.05), 0 6px 16px rgba(202,168,106,.35);
   transition: transform .06s ease, box-shadow .2s ease, filter .2s ease;
 }
@@ -148,7 +146,7 @@ body.modal-open{ overflow:hidden; touch-action:none; }
     <div class="gm-content">
       <form id="guest-form" novalidate>
         <h3 style="margin:4px 0 8px 0;">Confirmación de asistencia</h3>
-        <p style="margin:0 0 12px 0;">Por favor ayúdanos a confirmar tu asistencia antes del 5 de noviembre.</p>
+        <p style="margin:0 0 12px 0;">Por favor ayúdanos a confirmar tu asistencia antes del 5 de febrero.</p>
 
         <div class="field">
           <label>¿Asistirás?</label>
@@ -275,7 +273,7 @@ body.modal-open{ overflow:hidden; touch-action:none; }
     // fd.append('token', '...'); // cuando agregues el secreto
 
     try{
-      await fetch("https://script.google.com/macros/s/AKfycbwoyrnq6g5ct3tZx3B38Nerd_n7RBbq87RAI-e-g9R9u_9BcW5nnQGtKNcUVQOZk2iV/exec", { method:'POST', body: fd, mode:'no-cors' });
+      await fetch("", { method:'POST', body: fd, mode:'no-cors' });
       statusEl.textContent = '¡Registro enviado! 🎉';
       setTimeout(close, 900);
     }catch(err){

@@ -50,8 +50,8 @@
       title: 'Lista de invitados',
       description: 'Déjanos tu nombre, cuántas personas vienen y un mensaje opcional.',
       decorTopCenterSrc: './images/flowerstopcenter.webp',
-      decorRightCenterSrc: './images/butterfliesrightbig.webp',
-      decorLeftCenterSrc: './images/butterfliesleftbig.webp'
+      decorRightCenterSrc: './images/dateright.webp',
+      decorLeftCenterSrc: './images/ballonscenterleft.webp'
     })
 
     const registry = {
@@ -183,7 +183,7 @@
               src: "./images/confirmbutton2.webp",
               alt: "Salón",
               variant: "wideText",
-              onClick: () => window.open('https://maps.app.goo.gl/MocggLhSqwr6Aj3H7', '_blank')
+              onClick: () => guestModal.open()
             }
           ]
         }
