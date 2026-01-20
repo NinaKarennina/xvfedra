@@ -21,7 +21,7 @@ export function initGuestModal({
 :root{
   /* Paleta contador (azul + blanco) */
   --paper:#ffffff;                 /* fondo del modal */
-  --ink:#0B46A6;                   /* texto principal azul */
+  --ink:#000;                   /* texto principal azul */
   --overlay: rgba(11,70,166,.30);  /* overlay azul translúcido */
 
   /* Marco del modal (degradado azul como el arte) */
@@ -102,7 +102,7 @@ export function initGuestModal({
   appearance:none; cursor:pointer; border-radius:999px; border:2px solid transparent;
   padding:10px 16px; color:#fff; font-weight:700; letter-spacing:.2px;
   background:
-  linear-gradient(#0B46A6, #0B46A6) padding-box,
+  linear-gradient(#0B46A6, #333333) padding-box,
   linear-gradient(135deg, var(--gold1), var(--gold2) 50%, var(--gold3)) border-box;
   box-shadow:0 2px 0 rgba(0,0,0,.05), 0 6px 16px rgba(202,168,106,.35);
   transition: transform .06s ease, box-shadow .2s ease, filter .2s ease;
