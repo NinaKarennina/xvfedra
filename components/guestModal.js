@@ -273,7 +273,7 @@ body.modal-open{ overflow:hidden; touch-action:none; }
     // fd.append('token', '...'); // cuando agregues el secreto
 
     try{
-      await fetch("https://script.google.com/macros/s/AKfycbxdFS8thPX_byxIuwB2FmO8jm1R6bSTERhxWzEBtmCnaE7BzbCJ213miUj1NZxC-XZnPw/exec", { method:'POST', body: fd, mode:'no-cors' });
+      await fetch("https://script.google.com/macros/s/AKfycbxwsK_4uc32yTDDUpHJEyWkqnRRmEIE19NoiH7je1cM7vLi7Sx7f22Vzjjv1KgdZ8QK9w/exec", { method:'POST', body: fd, mode:'no-cors' });
       statusEl.textContent = '¡Registro enviado! 🎉';
       setTimeout(close, 900);
     }catch(err){
