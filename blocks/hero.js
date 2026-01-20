@@ -323,7 +323,7 @@ if (!document.getElementById(styleId)) {
   position: absolute;
   top: 0;
   left: 50%;
-  max-width: var(--device-w);
+  max-width: 100%;
   max-height: var(--center-h, 40vh);
   object-fit: contain;
   pointer-events: none;

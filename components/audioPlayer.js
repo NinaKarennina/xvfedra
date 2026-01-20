@@ -5,7 +5,7 @@
 export function initAudioPlayer({
   src,
   width = 'calc(var(--device-w, 430px) * 0.30)', // ~30% de 430px
-  color = '#0B46A6',
+  color = '#000000',
   top = 15,                // posición final desde el borde superior (px)
   safeTopPx = 0,           // suma extra (p.ej. notch) si la necesitas
   followAnchor = null,     // selector o HTMLElement; ej: topHero o '.split-hero'

@@ -82,25 +82,26 @@
       {
         background: '',
 
-        topCenter: './images/ballonscentertop.webp',
+        topCenter: './images/fedratop.webp',
         leftCenter:'./images/ballonscenterleft.webp',
         rightCenter:'./images/ballonscenteright.webp',
 
         stack3: {
           items: [
-          { kind: "html", html: "<div style='height:4vh'></div>" },  
+          { kind: "html", html: "<div style='height:10vh'></div>" },  
+          {
+              kind: "image",
+              src: "./images/savethedate.webp",
+              alt: "Imagen principal",
+              variant: "wideText" 
+            },
           {
               kind: "image",
               src: "./images/main2.webp",
               alt: "Imagen principal",
               variant: "principal"   // 👈 ocupará ~70% del alto
             },
-          {
-              kind: "image",
-              src: "./images/main3.webp",
-              alt: "Imagen principal",
-              variant: "wideText"   // 👈 ocupará ~70% del alto
-            },
+          
             {
               kind: "image",
               src: "./images/intro.webp",
@@ -163,6 +164,32 @@
       }
       ,
       {
+        background: '',                         // sin fondo
+        //leftCenter: './images/dateleftbottom.webp', // decorativo lateral
+        //rightCenter: './images/dateright.webp',
+
+        stack3: {
+          gap: "10px",
+          items: [
+            // {
+            //   kind: "image",
+            //   src: "./images/main.webp",
+            //   alt: "Imagen principal",
+            //   variant: "principal"   // 👈 ocupará ~70% del alto
+            // },
+            { kind: "image", src: "./images/partynew.webp", alt: "Cuadrada", variant: "square" },
+            {
+              kind: "buttonImage",
+              src: "./images/mapbutton2.webp",
+              alt: "Iglesia",
+              variant: "wideText",
+              onClick: () => window.open('https://maps.app.goo.gl/mBR7Jz2SZDgZwYuh7', '_blank')
+            }
+          ]
+        }
+      }
+      ,
+      {
         // sin fondo ni parallax
         background: '',
         //topLeft: './images/butterflielefttop.webp',
@@ -208,7 +235,7 @@
                 bgSrc: './images/counter.webp',
                 //digitsPath: d => `./digits/${d}.png`,
                 zeroPad: { days: 2, hours: 2, minutes: 2, seconds: 2 },
-                showLabels: true,
+                //showLabels: true,
                 // clave: atarlo a tu "device width"
                 scaleWidth: 'min(80vw, calc(var(--device-w, 430px) * 0.90))',
                 

@@ -223,57 +223,59 @@ if (!document.getElementById(STYLE_ID)) {
 
 /* ✅ SOLO CAMBIO: antes eran óvalos; ahora “cuadraditos” como la imagen
    OJO: NO cambiamos min-width/min-height del layout (se quedan iguales) */
+/* ✅ Contenedor del número (cuadro blanco) — mismo tamaño, mismo layout */
 .cd-pill{
   min-width: calc(var(--k) * 90px);
   min-height: calc(var(--k) * 90px);
 
-  /* Antes: border-radius: 999px; */
+  /* lo dejo igual (solo forma), no afecta tamaño */
   border-radius: calc(var(--k) * 12px);
 
-  /* Antes: padding-inline grande para dígitos-img.
-     Lo dejamos, pero reducimos el padding real para que el número se centre bien. */
   padding-inline: calc(var(--k) * 0px);
 
-  /* Color azul oscuro del arte */
-  background: #0B46A6;
+  /* ✅ como la imagen: cuadro blanco */
+  background: rgba(255, 255, 255, 0.92);
 
   display:flex;
   align-items: center;
   justify-content: center;
 
-  border: 2px solid rgba(255,255,255,.10);
+  /* ✅ borde y sombra sutiles como tarjeta */
+  border: 1px solid rgba(0,0,0,.08);
   box-shadow:
-    0 10px 30px rgba(0,0,0,.18),
-    inset 0 1px 0 rgba(255,255,255,.18);
+    0 10px 22px rgba(0,0,0,.12),
+    inset 0 1px 0 rgba(255,255,255,.85);
+
   position: relative;
   overflow: hidden;
 }
 
-/* brillo sutil arriba, parecido al render del arte */
+/* ✅ IMPORTANTE: quita el brillo azul anterior */
 .cd-pill::before{
-  content:"";
-  position:absolute;
-  left: 10%;
-  right: 10%;
-  top: 10%;
-  height: 45%;
-  border-radius: calc(var(--k) * 10px);
-  background: linear-gradient(to bottom, rgba(255,255,255,.14), rgba(255,255,255,0));
-  pointer-events:none;
+  content: none;
 }
 
-/* ✅ Número (texto) — reemplaza digitsPath */
+/* ✅ Número estilo “digital” gris (como la imagen) */
 .cd-value{
   position: relative;
   z-index: 1;
-  color: #fff;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-weight: 500;
+
+  color: rgba(40, 40, 40, 0.85);
+
+  /* intenta fuentes tipo 7-seg si existen; si no, cae a monospace */
+  font-family: "DSEG7 Classic", "Digital-7", "DS-Digital", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  font-weight: 400;
   letter-spacing: calc(var(--k) * 1px);
-  font-size: calc(var(--k) * 40px); /* similar a tus digits */
+
+  /* NO cambio tamaño */
+  font-size: calc(var(--k) * 40px);
   line-height: 1;
-  text-shadow: 0 1px 0 rgba(0,0,0,.28);
+
+  /* sombra sutil tipo “tinta” */
+  text-shadow: 0 1px 0 rgba(255,255,255,.35);
 }
+
 
 /* Mantengo tus estilos de labels para no mover nada */
 .cd-labels{
